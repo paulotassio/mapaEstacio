@@ -16,6 +16,8 @@
             height: 100vh;
             color: #fff;
             overflow: hidden;
+            /*aqui*/
+            max-width: 412px;
         }
 
         .map-container {
@@ -89,6 +91,12 @@
             background-color: #ff6666;
         }
 
+        .course-list {
+            margin-top: 10px;
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+
         @media (max-width: 412px) {
             .icon {
                 width: 16px;
@@ -119,36 +127,39 @@
 <body>
     <div class="map-container">
         <!-- Ícones adicionados -->
-        <div class="icon" style="top: 42%; left: 51%;" data-title="Análise e Desenvolvimento de Sistemas" data-info="Local: Laboratório de Informática">
-            <span>2</span>
-        </div>
-        <div class="icon" style="top: 46%; left: 56%;" data-title="Administração" data-info="Local: Projete">
+        <div class="icon" style="top: 44%; left: 45%;" data-title="Administração" data-info="Local: Pátio Principal">
             <span>1</span>
         </div>
+        <div class="icon" style="top: 42%; left: 50%;" data-title="Análise e Desenvolvimento de Sistemas" data-info="Local: Laboratório de Informática">
+            <span>2</span>
+        </div>        
         <div class="icon" style="top: 50%; left: 48%;" data-title="Direito" data-info="Local: NPJ">
             <span>3</span>
-        </div>
-        <div class="icon" style="top: 45%; left: 31%;" data-title="Enfermagem" data-info="Local: Laboratório de Enfermagem">
-            <span>5</span>
-        </div>
-        <div class="icon" style="top: 37%; left: 65%;" data-title="Engenharia Civil" data-info="Local: Laboratório de Civil">
-            <span>6</span>
-        </div>
-        <div class="icon" style="top: 42%; left: 36%;" data-title="Farmácia" data-info="Local: Laboratório de Farmácia">
-            <span>8</span>
-        </div>
-        <div class="icon" style="top: 42%; left: 32%;" data-title="Psicologia" data-info="Local: Laboratório de Psicologia">
-            <span>10</span>
-        </div>
-        <div class="icon" style="top: 48%; left: 26%;" data-title="Fisioterapia" data-info="Local: Laboratório de Fisioterapia">
-            <span>9</span>
         </div>
         <div class="icon" style="top: 43%; left: 40%;" data-title="Fisioterapia e Educação Fisica" data-info="Local: Laboratório de Fisioterapia">
             <span>4</span>
         </div>
-        <div class="icon" style="top: 39%; left: 72%;" data-title="Farmácia" data-info="Local: Bloco J">
+        <div class="icon" style="top: 44%; left: 30%;" data-title="Enfermagem" data-info="Local: Laboratório de Enfermagem">
+            <span>5</span>
+        </div>
+        <div class="icon" style="top: 34%; left: 65%;" data-title="Engenharia Civil" data-info="Local: Laboratório de Civil">
+            <span>6</span>
+        </div>
+        <div class="icon" style="top: 36%; left: 72%;" data-title="Farmácia" data-info="Local: Bloco J">
             <span>7</span>
         </div>
+        <div class="icon" style="top: 42%; left: 36%;" data-title="Farmácia" data-info="Local: Laboratório de Farmácia">
+            <span>7</span>
+        </div>
+        <div class="icon" style="top: 47%; left: 26%;" data-title="Fisioterapia" data-info="Local: Laboratório de Fisioterapia">
+            <span>8</span>
+        </div>
+        <div class="icon" style="top: 42%; left: 32%;" data-title="Psicologia" data-info="Local: Laboratório de Psicologia">
+            <span>9</span>
+        </div>
+        
+        
+        
         
         <div class="popup" id="popup">
             <h5 id="popup-title"></h5>
@@ -157,6 +168,7 @@
         </div>
     </div>
 
+    
     <script>
         const icons = document.querySelectorAll('.icon');
         const popup = document.getElementById('popup');
@@ -183,5 +195,7 @@
             popup.style.display = 'none';
         }
     </script>
+
+
 </body>
 </html>
