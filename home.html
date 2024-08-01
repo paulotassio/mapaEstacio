@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interativo da Faculdade</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #008080;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: url('imagem/fundo.jpg') no-repeat center center;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .icon {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: #f00;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 12px;
+            z-index: 12;
+        }
+
+        .icon:hover {
+            background-color: #ff0;
+        }
+
+        .popup {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 250px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            z-index: 20;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .popup h5 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+
+        .popup p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .close-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #ff4444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .close-btn:hover {
+            background-color: #ff6666;
+        }
+
+        @media (max-width: 412px) {
+            .icon {
+                width: 16px;
+                height: 16px;
+                font-size: 12px;
+            }
+
+            .popup {
+                max-width: 200px;
+                padding: 10px;
+            }
+
+            .popup h5 {
+                font-size: 8px;
+            }
+
+            .popup p {
+                font-size: 7px;
+            }
+
+            .close-btn {
+                padding: 3px 7px;
+                font-size: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <!-- Ícones adicionados -->
+        <div class="icon" style="top: 42%; left: 50%;" data-title="Análise e Desenvolvimento de Sistemas" data-info="Local: Laboratório de Informática">
+            <span>2</span>
+        </div>
+        <div class="icon" style="top: 46%; left: 56%;" data-title="Administração" data-info="Local: Projete">
+            <span>1</span>
+        </div>
+        <div class="icon" style="top: 50%; left: 48%;" data-title="Direito" data-info="Local: NPJ">
+            <span>3</span>
+        </div>
+        <div class="icon" style="top: 44%; left: 30%;" data-title="Enfermagem" data-info="Local: Laboratório de Enfermagem">
+            <span>5</span>
+        </div>
+        <div class="icon" style="top: 34%; left: 65%;" data-title="Engenharia Civil" data-info="Local: Laboratório de Civil">
+            <span>6</span>
+        </div>
+        <div class="icon" style="top: 42%; left: 36%;" data-title="Farmácia" data-info="Local: Laboratório de Farmácia">
+            <span>8</span>
+        </div>
+        <div class="icon" style="top: 42%; left: 32%;" data-title="Psicologia" data-info="Local: Laboratório de Psicologia">
+            <span>10</span>
+        </div>
+        <div class="icon" style="top: 47%; left: 26%;" data-title="Fisioterapia" data-info="Local: Laboratório de Fisioterapia">
+            <span>9</span>
+        </div>
+        <div class="icon" style="top: 43%; left: 40%;" data-title="Fisioterapia e Educação Fisica" data-info="Local: Laboratório de Fisioterapia">
+            <span>4</span>
+        </div>
+        <div class="icon" style="top: 36%; left: 72%;" data-title="Farmácia" data-info="Local: Bloco J">
+            <span>7</span>
+        </div>
+        
+        <div class="popup" id="popup">
+            <h5 id="popup-title"></h5>
+            <p id="popup-info"></p>
+            <button class="close-btn" onclick="closePopup()">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        const icons = document.querySelectorAll('.icon');
+        const popup = document.getElementById('popup');
+        const popupTitle = document.getElementById('popup-title');
+        const popupInfo = document.getElementById('popup-info');
+
+        icons.forEach(icon => {
+            icon.addEventListener('click', function() {
+                const iconRect = this.getBoundingClientRect();
+                const popupRect = popup.getBoundingClientRect();
+                
+                const left = iconRect.left + (iconRect.width / 2) - (popupRect.width / 2);
+                const top = iconRect.top - popupRect.height - 10;
+                
+                popupTitle.textContent = this.getAttribute('data-title');
+                popupInfo.textContent = this.getAttribute('data-info');
+                popup.style.left = `${left}px`;
+                popup.style.top = `${top}px`;
+                popup.style.display = 'block';
+            });
+        });
+
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
