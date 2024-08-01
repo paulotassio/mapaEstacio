@@ -16,15 +16,13 @@
             height: 100vh;
             color: #fff;
             overflow: hidden;
-            /*aqui*/
-            max-width: 412px;
         }
 
         .map-container {
             position: relative;
             width: 100%;
             height: 100%;
-            background: url('imagem/fundo.jpg') no-repeat center center;
+            background: url('imagem/fundo2.png') no-repeat center center;
             background-size: contain;
             display: flex;
             justify-content: center;
@@ -36,7 +34,6 @@
             position: absolute;
             width: 25px;
             height: 25px;
-            background-color: #f00;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -47,8 +44,19 @@
             z-index: 12;
         }
 
+        .icon-1 { background-color: #ED3237; }
+        .icon-2 { background-color: #00FF7F; }
+        .icon-3 { background-color: #0000CD; }
+        .icon-4 { background-color: #94440A; }
+        .icon-5 { background-color: #FF1493; }
+        .icon-6 { background-color: #000080; }
+        .icon-7 { background-color: #FF8C00; } /* Laranja */
+        .icon-8 { background-color: #008000; } /* Roxo */
+        .icon-9 { background-color: #8B008B; } /* Verde Escuro */
+        .icon-10 { background-color: #4F4F4F; }
+
         .icon:hover {
-            background-color: #ff0;
+            opacity: 0.8;
         }
 
         .popup {
@@ -91,17 +99,11 @@
             background-color: #ff6666;
         }
 
-        .course-list {
-            margin-top: 10px;
-            list-style-type: decimal;
-            padding-left: 20px;
-        }
-
         @media (max-width: 412px) {
             .icon {
-                width: 16px;
-                height: 16px;
-                font-size: 12px;
+                width: 15px;
+                height: 15px;
+                font-size: 10px;
             }
 
             .popup {
@@ -110,57 +112,70 @@
             }
 
             .popup h5 {
-                font-size: 8px;
+                font-size: 12px;
             }
 
             .popup p {
-                font-size: 7px;
+                font-size: 10px;
             }
 
             .close-btn {
                 padding: 3px 7px;
-                font-size: 8px;
+                font-size: 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="map-container">
-        <!-- Ícones adicionados -->
-        <div class="icon" style="top: 44%; left: 45%;" data-title="Administração" data-info="Local: Pátio Principal">
+        <div class="icon icon-1" style="top: 44%; left: 45%;" data-title="Administração" data-info="Local: Pátio Principal">
             <span>1</span>
         </div>
-        <div class="icon" style="top: 42%; left: 50%;" data-title="Análise e Desenvolvimento de Sistemas" data-info="Local: Laboratório de Informática">
+        <div class="icon icon-2" style="top: 41.5%; left: 51%;" data-title="Análise e Desenvolvimento de Sistemas" data-info="Local: Laboratório de Informática">
             <span>2</span>
         </div>        
-        <div class="icon" style="top: 50%; left: 48%;" data-title="Direito" data-info="Local: NPJ">
+        <div class="icon icon-3" style="top: 50.5%; left: 48%;" data-title="Direito" data-info="Local: NPJ">
             <span>3</span>
         </div>
-        <div class="icon" style="top: 43%; left: 40%;" data-title="Fisioterapia e Educação Fisica" data-info="Local: Laboratório de Fisioterapia">
+        <div class="icon icon-4" style="top: 41%; left: 39%;" data-title="Educação Física e Fisioterapia" data-info="Local: Laboratório de Fisioterapia">
             <span>4</span>
         </div>
-        <div class="icon" style="top: 44%; left: 30%;" data-title="Enfermagem" data-info="Local: Laboratório de Enfermagem">
+        <div class="icon icon-5" style="top: 44%; left: 31%;" data-title="Enfermagem" data-info="Local: Laboratório de Enfermagem">
             <span>5</span>
         </div>
-        <div class="icon" style="top: 34%; left: 65%;" data-title="Engenharia Civil" data-info="Local: Laboratório de Civil">
+        <div class="icon icon-6" style="top: 32.5%; left: 65.5%;" data-title="Engenharia Civil" data-info="Local: Laboratório de Civil">
             <span>6</span>
         </div>
-        <div class="icon" style="top: 36%; left: 72%;" data-title="Farmácia" data-info="Local: Bloco J">
+        <div class="icon icon-7" style="top: 36%; left: 72%;" data-title="Farmácia" data-info="Local: Bloco J">
             <span>7</span>
         </div>
-        <div class="icon" style="top: 42%; left: 36%;" data-title="Farmácia" data-info="Local: Laboratório de Farmácia">
+        <div class="icon icon-7" style="top: 40.5%; left: 31.5%;" data-title="Farmácia" data-info="Local: Laboratório de Farmácia">
             <span>7</span>
         </div>
-        <div class="icon" style="top: 47%; left: 26%;" data-title="Fisioterapia" data-info="Local: Laboratório de Fisioterapia">
+        <div class="icon icon-8" style="top: 42%; left: 35.5%;" data-title="Fisioterapia" data-info="Local: Laboratório de Fisioterapia">
             <span>8</span>
         </div>
-        <div class="icon" style="top: 42%; left: 32%;" data-title="Psicologia" data-info="Local: Laboratório de Psicologia">
+        <div class="icon icon-8" style="top: 47%; left: 26.5%;" data-title="Fisioterapia" data-info="Local: Laboratório de Fisioterapia">
+            <span>8</span>
+        </div>
+        <div class="icon icon-9" style="top: 42%; left: 43%;" data-title="Psicologia" data-info="Local: Laboratório de Psicologia">
             <span>9</span>
         </div>
-        
-        
-        
-        
+        <div class="icon icon-10" style="top: 52%; left: 32%;" data-title="Entrada Principal" data-info="Local: Portão da BR">
+            <span>E</span>
+        </div>
+        <div class="icon icon-10" style="top: 48%; left: 39.5%;" data-title="Educação Física e Fisioterapia" data-info="Local: Sala de Matrícula">
+            <span>SM</span>
+        </div>
+        <div class="icon icon-10" style="top: 45.5%; left: 56.5%;" data-title="Direção e Secretaria" data-info="Local: Bloco D">
+            <span>DS</span>
+        </div>
+        <div class="icon icon-10" style="top: 42%; left: 65%;" data-title="Biblioteca" data-info="Local: Bloco H">
+            <span>B</span>
+        </div>
+        <div class="icon icon-10" style="top: 45%; left: 66%;" data-title="Sala de Estudos" data-info="Local: Bloco H">
+            <span>SE</span>
+        </div>
         <div class="popup" id="popup">
             <h5 id="popup-title"></h5>
             <p id="popup-info"></p>
@@ -168,7 +183,6 @@
         </div>
     </div>
 
-    
     <script>
         const icons = document.querySelectorAll('.icon');
         const popup = document.getElementById('popup');
@@ -195,7 +209,5 @@
             popup.style.display = 'none';
         }
     </script>
-
-
 </body>
 </html>
