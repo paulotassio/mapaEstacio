@@ -1,0 +1,115 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #008080;
+}
+
+.container {
+    position: relative;
+    width: 360px; /* Largura da div */
+    height: auto; /* Ajusta altura automaticamente */
+    margin: 0 auto; /* Centraliza a div na tela */
+}
+
+.background-image {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove o espaçamento embaixo da imagem 
+    justify-content: center;
+    align-items: center; /* Centraliza a imagem verticalmente */
+}
+
+.responsive-image {
+    width: 100%; /* Faz a imagem ocupar toda a largura da div */
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+    display: block; /* Remove o espaçamento embaixo da imagem */
+}
+/**************************************************************************/
+.icon {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 9px;
+    z-index: 12;
+}
+
+.icon-1 { background-color: #ED3237; } /*adm e contabeis*/
+.icon-2 { background-color: #886A08; } /*ADS*/
+.icon-3 { background-color: #0000CD; } /*direito*/
+.icon-4 { background-color: #595959; } /*edu fisica*/
+.icon-5 { background-color: #FF1493; } /*enfermagem*/
+.icon-6 { background-color: #000080; } /*eng civil*/
+.icon-7 { background-color: #FF8C00; } /*farmacia*/
+.icon-8 { background-color: #008000; } /*fisioterapia*/
+.icon-9 { background-color: #8B008B; } /*pisicologia*/
+.icon-10 { background-color: #000000; } 
+.icon-11 { background-color: #8A0829; } /*biomedicina*/
+.icon-12 { background-color: #0B4C5F; } /*estetica*/
+
+.icon:hover {
+    opacity: 0.8;
+}
+
+/**************************************************************************/
+
+.popup {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.popup h5 {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+}
+
+.popup p {
+    margin: 0;
+    font-size: 10px;
+}
+
+.close-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 3px 7px;
+    background-color: #ff4444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.close-btn:hover {
+    background-color: #ff6666;
+}
+
+.footer {
+    font-size: 12px;
+    background-color: #025F61;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
